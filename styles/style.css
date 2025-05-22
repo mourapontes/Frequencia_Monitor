@@ -1,0 +1,157 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 700px;
+    margin: 32px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 24px 18px 32px 18px;
+}
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.icone-onibus {
+    font-size: 2.5rem;
+    margin: 8px 0;
+}
+
+.subtitulo {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 18px;
+    justify-content: center;
+}
+
+.filtros label {
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.filtros input,
+.filtros select {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    font-size: 1rem;
+}
+
+.filtros button {
+    padding: 7px 18px;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.filtros button:hover {
+    background: #125ea8;
+}
+
+#lista-alunos {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 18px;
+}
+
+#lista-alunos li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05rem;
+}
+
+#lista-alunos input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #1976d2;
+}
+
+.botoes {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 9px 22px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #125ea8;
+}
+
+#relatorio {
+    background: #f1f8e9;
+    border-radius: 6px;
+    padding: 16px;
+    min-height: 40px;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+    word-break: break-word;
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 98vw;
+        margin: 10px 1vw;
+        padding: 12px 4vw 18px 4vw;
+    }
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    .botoes {
+        flex-direction: column;
+        gap: 8px;
+    }
+    #lista-alunos li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        font-size: 1rem;
+    }
+    #relatorio {
+        font-size: 0.98rem;
+        padding: 10px;
+    }
+}

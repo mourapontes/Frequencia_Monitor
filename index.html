@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferência de Frequência de Alunos</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cabecalho">
+            <h1>Conferência de Frequência de Alunos(as) do Transporte Escolar</h1>
+            <div class="icone-onibus" aria-label="ônibus escolar">🚌</div>
+            <p class="subtitulo">Módulo Frequência</p>
+        </div>
+        <div class="filtros">
+            <label for="filtro-data">Data da frequência:</label>
+            <input type="date" id="filtro-data" required>
+            <label for="filtro-rota">Rota:</label>
+            <select id="filtro-rota" required>
+                <option value="">Todas as rotas</option>
+                <option value="Rota Sítio">Rota Sítio</option>
+                <option value="Rota Panasco">Rota Panasco</option>
+                <option value="Rota Sossego">Rota Sossego</option>
+                <option value="Rota Extrema">Rota Extrema</option>
+                <option value="Rota Salina">Rota Salina</option>
+                <option value="Rota Umburana">Rota Umburana</option>
+                <option value="Rota Pedrinhas">Rota Pedrinhas</option>
+                <option value="Rota Azevedo">Rota Azevedo</option>
+                <option value="Rota 9">Rota 9</option>
+                <option value="Rota 10">Rota 10</option>
+            </select>
+            <button id="btn-carregar-data" type="button">Carregar</button>
+        </div>
+        <ul id="lista-alunos"></ul>
+        <div class="botoes">
+            <button id="btn-salvar-presenca">Salvar Presenças</button>
+            <button id="btn-salvar-pdf">Salvar Relatório em PDF</button>
+        </div>
+        <div id="relatorio"></div>
+    </div>
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
+        const SUPABASE_URL = "https://edozyljtstdvdbkpjmot.supabase.co";
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkb3p5bGp0c3RkdmRia3BqbW90Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc1MDYyMDMsImV4cCI6MjA2MzA4MjIwM30.7OxXRQ9gc3JGah3GKVuGG1czuaoCvMQvTE317m43OdY";
+        window.supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

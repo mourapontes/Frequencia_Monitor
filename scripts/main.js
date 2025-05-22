@@ -50,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span>${aluno.nome} - Turma: ${aluno.turma} - Rota: ${aluno.rota}</span>
             `;
             lista.appendChild(li);
-            relatorioHTML += `<li>${aluno.nome} - ${presenteTexto}</li>`;
+            // Adiciona a rota no relatório
+            relatorioHTML += `<li>${aluno.nome} - ${aluno.rota} - ${presenteTexto}</li>`;
         });
         relatorioHTML += '</ul>';
         document.getElementById('relatorio').innerHTML = relatorioHTML;
@@ -93,7 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Evento do botão PDF
     document.getElementById('btn-salvar-pdf').addEventListener('click', () => {
         const lista = document.getElementById('lista-alunos');
-        let relatorio = 'Secretaria Municipal de Educação\nTransporte Escolar\n\nRelatório de Frequência:\n\n';
+        const dataSelecionada = document.getElementById('filtro-data').value;
+        let relatorio = 'Secretaria Municipal de Educação\nTransporte Escolar\n\n';
+        relatorio += `Data da Frequência: ${dataSelecionada}\n\nRelatório de Frequência:\n\n`;
         lista.querySelectorAll('li').forEach(li => {
             const nome = li.querySelector('span').innerText;
             const presente = li.querySelector('input').checked ? 'Presente' : 'Faltou';
